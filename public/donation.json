@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Help Build a School",
+    "description": "Support the education of underprivileged children by building a new school.",
+    "thumbnail": "https://www.globalgiving.org/pfil/1877/ph_1877_99953.jpg",
+    "amount": 3500,
+    "category": "Education"
+  },
+  {
+    "id": 2,
+    "title": "Provide Clean Water",
+    "description": "Fund clean water initiatives for communities in need of safe drinking water.",
+    "thumbnail": "https://www.worldvision.org.uk/media/2jcb4saf/afghanistan_water_2017_wv1133330.jpg",
+    "amount": 2200,
+    "category": "Water & Sanitation"
+  },
+  {
+    "id": 3,
+    "title": "Medical Aid for Refugees",
+    "description": "Provide essential medical supplies and support for refugees in need.",
+    "thumbnail": "https://img.freepik.com/premium-photo/nurse-with-nurse-blue-uniform-is-talking-nurse_1097875-39743.jpg?semt=ais_hybrid",
+    "amount": 4500,
+    "category": "Healthcare"
+  },
+  {
+    "id": 4,
+    "title": "Animal Shelter Support",
+    "description": "Donate to help build and maintain shelters for abandoned animals.",
+    "thumbnail": "https://www.sddac.com/content/dam/sdc/das/images/donations/donate_sb.jpg",
+    "amount": 1500,
+    "category": "Animal Welfare"
+  },
+  {
+    "id": 5,
+    "title": "Tree Planting Campaign",
+    "description": "Help combat deforestation by donating towards tree-planting efforts.",
+    "thumbnail": "https://rotrost.com/wp-content/uploads/2024/06/opt__aboutcom__coeus__resources__content_migration__mnn__images__2014__12__environmental-charities-92354c3f71b44ca3a3d6729194190eef.jpg",
+    "amount": 1200,
+    "category": "Environment"
+  },
+  {
+    "id": 6,
+    "title": "Support Mental Health",
+    "description": "Contribute to mental health initiatives for awareness, support, and recovery.",
+    "thumbnail": "https://www.childrensmentalhealthweek.org.uk/media/mxjlsrgb/cmhw24-resources.webp",
+    "amount": 1800,
+    "category": "Mental Health"
+  },
+  {
+    "id": 7,
+    "title": "Disaster Relief Fund",
+    "description": "Provide aid and resources to communities affected by natural disasters.",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9HomHXQuWDmtIB0XU_T-XNlVusEQESLf2UQ1qH5qchGlwUM9igagfgGDrigZpTpCqzsk&usqp=CAU",
+    "amount": 5000,
+    "category": "Disaster Relief"
+  },
+  {
+    "id": 8,
+    "title": "Elderly Care Support",
+    "description": "Help provide essential services and companionship for senior citizens.",
+    "thumbnail": "https://img.freepik.com/free-photo/doctor-talking-with-her-elder-patient_23-2148962311.jpg",
+    "amount": 2700,
+    "category": "Elderly Care"
+  },
+  {
+    "id": 9,
+    "title": "Women's Empowerment Program",
+    "description": "Support women in need through education, job training, and resources.",
+    "thumbnail": "https://www.gofundme.com/en-ca/c/wp-content/uploads/sites/8/2018/01/teamwork-e1532734998347.jpg?w=1024",
+    "amount": 3000,
+    "category": "Women's Empowerment"
+  },
+  {
+    "id": 10,
+    "title": "Food for the Homeless",
+    "description": "Provide meals and essential supplies to people experiencing homelessness.",
+    "thumbnail": "https://hips.hearstapps.com/hmg-prod/images/volunteers-serving-healthy-hot-meal-at-soup-kitchen-royalty-free-image-1599593367.jpg",
+    "amount": 4000,
+    "category": "Hunger Relief"
+  }
+]
