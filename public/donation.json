@@ -1,82 +1,72 @@
 [
   {
-    "id": 1,
     "title": "Help Build a School",
-    "description": "Support the education of underprivileged children by building a new school.",
+    "description": "Support the education of underprivileged children by building a new school. Empower underprivileged children by funding the construction of a school to provide quality education and opportunities. Your contribution will help create a nurturing environment for children to learn, grow, and break the cycle of poverty through education.",
     "thumbnail": "https://www.globalgiving.org/pfil/1877/ph_1877_99953.jpg",
-    "amount": 3500,
+    "amount": 35,
     "category": "Education"
   },
   {
-    "id": 2,
     "title": "Provide Clean Water",
-    "description": "Fund clean water initiatives for communities in need of safe drinking water.",
+    "description": "Fund clean water initiatives for communities in need of safe drinking water. Ensure access to safe drinking water for communities facing water scarcity and poor sanitation. By supporting this cause, you are helping to improve health, reduce waterborne diseases, and give families the chance to thrive in a healthier environment.",
     "thumbnail": "https://www.worldvision.org.uk/media/2jcb4saf/afghanistan_water_2017_wv1133330.jpg",
-    "amount": 2200,
+    "amount": 20,
     "category": "Water & Sanitation"
   },
   {
-    "id": 3,
     "title": "Medical Aid for Refugees",
-    "description": "Provide essential medical supplies and support for refugees in need.",
+    "description": "Provide essential medical supplies and support for refugees in need. Deliver critical medical care and supplies to refugees living in challenging conditions worldwide. Your donation will help provide life-saving treatments, medicines, and support to vulnerable populations in dire need.",
     "thumbnail": "https://img.freepik.com/premium-photo/nurse-with-nurse-blue-uniform-is-talking-nurse_1097875-39743.jpg?semt=ais_hybrid",
-    "amount": 4500,
+    "amount": 45,
     "category": "Healthcare"
   },
   {
-    "id": 4,
     "title": "Animal Shelter Support",
-    "description": "Donate to help build and maintain shelters for abandoned animals.",
+    "description": "Donate to help build and maintain shelters for abandoned animals. Provide food, care, and shelter for abandoned animals by supporting animal welfare organizations. Together, we can ensure these animals receive proper medical attention, love, and a safe place to call home.",
     "thumbnail": "https://www.sddac.com/content/dam/sdc/das/images/donations/donate_sb.jpg",
-    "amount": 1500,
+    "amount": 15,
     "category": "Animal Welfare"
   },
   {
-    "id": 5,
     "title": "Tree Planting Campaign",
-    "description": "Help combat deforestation by donating towards tree-planting efforts.",
+    "description": "Help combat deforestation by donating towards tree-planting efforts. Support global reforestation efforts to combat climate change and protect wildlife habitats. Every tree planted helps reduce carbon footprints, restore biodiversity, and secure a greener future for generations to come.",
     "thumbnail": "https://rotrost.com/wp-content/uploads/2024/06/opt__aboutcom__coeus__resources__content_migration__mnn__images__2014__12__environmental-charities-92354c3f71b44ca3a3d6729194190eef.jpg",
-    "amount": 1200,
+    "amount": 20,
     "category": "Environment"
   },
   {
-    "id": 6,
     "title": "Support Mental Health",
-    "description": "Contribute to mental health initiatives for awareness, support, and recovery.",
+    "description": "Contribute to mental health initiatives for awareness, support, and recovery. Promote mental health awareness and provide resources for counseling, recovery, and emotional support. Your help can bring hope to those struggling with mental health challenges and create safe spaces for healing and growth.",
     "thumbnail": "https://www.childrensmentalhealthweek.org.uk/media/mxjlsrgb/cmhw24-resources.webp",
-    "amount": 1800,
+    "amount": 30,
     "category": "Mental Health"
   },
   {
-    "id": 7,
     "title": "Disaster Relief Fund",
-    "description": "Provide aid and resources to communities affected by natural disasters.",
+    "description": "Provide aid and resources to communities affected by natural disasters. Aid disaster-affected communities with emergency supplies, shelter, and rebuilding efforts. With your support, we can bring relief to families who have lost everything and help them rebuild their lives with dignity.",
     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9HomHXQuWDmtIB0XU_T-XNlVusEQESLf2UQ1qH5qchGlwUM9igagfgGDrigZpTpCqzsk&usqp=CAU",
-    "amount": 5000,
+    "amount": 50,
     "category": "Disaster Relief"
   },
   {
-    "id": 8,
     "title": "Elderly Care Support",
-    "description": "Help provide essential services and companionship for senior citizens.",
+    "description": "Help provide essential services and companionship for senior citizens. Provide essential services, companionship, and care for the elderly to improve their quality of life. Help senior citizens feel valued and supported, ensuring they receive the assistance they deserve in their golden years.",
     "thumbnail": "https://img.freepik.com/free-photo/doctor-talking-with-her-elder-patient_23-2148962311.jpg",
-    "amount": 2700,
+    "amount": 25,
     "category": "Elderly Care"
   },
   {
-    "id": 9,
     "title": "Women's Empowerment Program",
-    "description": "Support women in need through education, job training, and resources.",
+    "description": "Support women in need through education, job training, and resources. Help women achieve self-sufficiency through education, skill-building, and career opportunities. Empower them to break barriers, become independent, and create lasting positive changes in their communities. ",
     "thumbnail": "https://www.gofundme.com/en-ca/c/wp-content/uploads/sites/8/2018/01/teamwork-e1532734998347.jpg?w=1024",
-    "amount": 3000,
+    "amount": 30,
     "category": "Women's Empowerment"
   },
   {
-    "id": 10,
     "title": "Food for the Homeless",
-    "description": "Provide meals and essential supplies to people experiencing homelessness.",
+    "description": "Provide meals and essential supplies to people experiencing homelessness. Combat hunger by providing nutritious meals and basic necessities to the homeless population.  Your support will help ensure that vulnerable individuals receive the food and care they need to survive and rebuild their lives.",
     "thumbnail": "https://hips.hearstapps.com/hmg-prod/images/volunteers-serving-healthy-hot-meal-at-soup-kitchen-royalty-free-image-1599593367.jpg",
-    "amount": 4000,
+    "amount": 40,
     "category": "Hunger Relief"
   }
 ]

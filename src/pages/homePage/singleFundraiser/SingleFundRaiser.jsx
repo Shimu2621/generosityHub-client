@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import useAuthProvider from "../../../utils/authProvider/AuthProvider";
+import { useParams } from "react-router";
 
 const SingleFundraiser = () => {
   const { user } = useAuthProvider();
@@ -89,22 +90,26 @@ const SingleFundraiser = () => {
         <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-60 text-white px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 w-full max-w-6xl">
             {/* Left Section */}
+            {/* Thumbnail */}
             <div>
               <img
                 src={fundraiser.thumbnail}
                 alt={fundraiser.title}
-                className="h-[60vh] sm:h-[50vh] w-full object-cover py-8 shadow-lg"
+                className="h-[60vh] sm:h-[70vh] w-full object-cover py-8 "
               />
             </div>
 
             {/* Right Section */}
             <div className="flex flex-col justify-center">
+              {/* title */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
                 {fundraiser.title}
               </h1>
+              {/* description */}
               <p className="text-sm sm:text-lg lg:text-base text-gray-300 mb-6">
                 {fundraiser.description}
               </p>
+              {/* category */}
               <p className="text-sm sm:text-lg text-gray-300 mb-2">
                 <strong>Category:</strong> {fundraiser.category}
               </p>

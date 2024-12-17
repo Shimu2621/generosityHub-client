@@ -5,6 +5,7 @@ import DonationCard from "./donationCard/DonationCard";
 import Video from "./videoSection/Video";
 import FundRaiserCard from "./fundRaiser/FundRaiserCard";
 import Testimonials from "./testimonials/Testimonials";
+import OurGallery from "./ourGallery/OurGallery";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <DonationCard />
       <Video />
       <FundRaiserCard />
+      <OurGallery />
       <Testimonials />
     </div>
   );

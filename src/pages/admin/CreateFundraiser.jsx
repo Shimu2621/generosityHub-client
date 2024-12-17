@@ -4,12 +4,29 @@ import React, { useState } from "react";
 import createAnimation from "../../../public/create-animation.json";
 import toast from "react-hot-toast";
 import axios from "axios";
-
 const CreateFundraiser = () => {
-  const [selectedValue, setSelectedValue] = useState("");
-
-  const handleSubmit = (values) => {
-    axios
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
+  const [targetedAmount, setTargetedAmount] = useState("");
+  const [raisedAmount, setRaisedAmount] = useState("");
+  const [daysLeft, setDaysLeft] = useState("");
+  const [category, setCategory] = useState("");
+  const [status, setStatus] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const values = {
+      title,
+      description,
+      thumbnail,
+      targetedAmount,
+      raisedAmount,
+      daysLeft,
+      category,
+      status,
+    };
+    console.log(values);
+    await axios
       .post("http://localhost:4000/api/create-fundraiser", values)
       .then((response) => {
         toast.success("fundraiser created successfully");
@@ -23,7 +40,6 @@ const CreateFundraiser = () => {
   return (
     <div className="hero flex flex-col lg:flex-row items-center justify-center w-full bg-black min-h-screen">
       {/* <div className="hero-content flex-col  lg:flex-row-reverse"> */}
-
       {/* Left side: Lottie Animation */}
       <div className="w-full lg:w-1/2 bg-black flex items-center justify-center mb-6 lg:mb-0">
         <Lottie
@@ -48,6 +64,7 @@ const CreateFundraiser = () => {
               placeholder="Enter title"
               className="input input-bordered"
               required
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           {/* Description */}
@@ -61,6 +78,7 @@ const CreateFundraiser = () => {
               placeholder="Enter description "
               className="input input-bordered"
               required
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           {/* Thumbnail Url */}
@@ -74,6 +92,7 @@ const CreateFundraiser = () => {
               placeholder="Enter Url "
               className="input input-bordered"
               required
+              onChange={(e) => setThumbnail(e.target.value)}
             />
           </div>
           {/* Targeted amount */}
@@ -87,6 +106,7 @@ const CreateFundraiser = () => {
               placeholder="Enter targeted amount"
               className="input input-bordered"
               required
+              onChange={(e) => setTargetedAmount(e.target.value)}
             />
           </div>
           {/* Raised amount */}
@@ -100,6 +120,7 @@ const CreateFundraiser = () => {
               placeholder="Enter raised amount "
               className="input input-bordered"
               required
+              onChange={(e) => setRaisedAmount(e.target.value)}
             />
           </div>
           {/* Days left */}
@@ -113,6 +134,7 @@ const CreateFundraiser = () => {
               placeholder="Enter days "
               className="input input-bordered"
               required
+              onChange={(e) => setDaysLeft(e.target.value)}
             />
           </div>
           {/* Category */}
@@ -124,8 +146,7 @@ const CreateFundraiser = () => {
               name="category"
               className="select select-bordered"
               required
-              value={selectedValue}
-              onChange={(e) => setSelectedValue(e.target.value)}
+              onChange={(e) => setCategory(e.target.value)}
             >
               <option value="" disabled selected>
                 Select a category
@@ -146,8 +167,7 @@ const CreateFundraiser = () => {
               name="status"
               className="select select-bordered"
               required
-              value={selectedValue}
-              onChange={(e) => setSelectedValue(e.target.value)}
+              onChange={(e) => setStatus(e.target.value)}
             >
               <option value="" disabled selected>
                 Select status
@@ -167,5 +187,4 @@ const CreateFundraiser = () => {
     </div>
   );
 };
-
 export default CreateFundraiser;

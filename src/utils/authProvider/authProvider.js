@@ -4,6 +4,8 @@ import Cookies from "js-cookie";
 
 const useAuthProvider = () => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const getUserFromToken = () => {
       try {
@@ -13,8 +15,10 @@ const useAuthProvider = () => {
           const decoded = jwtDecode(token);
           console.log("decoded:", decoded);
           setUser(decoded);
+          setLoading(false);
         } else {
           setUser(null);
+          setLoading(false);
         }
       } catch (error) {
         console.log(error);
@@ -30,6 +34,6 @@ const useAuthProvider = () => {
     setUser(null); // Set the user state to null
   };
 
-  return { user, logout };
+  return { user, logout, loading };
 };
 export default useAuthProvider;

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "formik": "^2.4.6",
     "js-cookie": "^3.0.5",

@@ -83,6 +83,17 @@ const AdminLayout = () => {
               All Fundraiser
             </NavLink>
           </li>
+          {/* All transaction route */}
+          <li className=" font-semibold">
+            <NavLink
+              to="/admin/all-transaction"
+              style={({ isActive }) => ({
+                color: isActive ? "cyan" : "black",
+              })}
+            >
+              All Transaction
+            </NavLink>
+          </li>
           {/* All User route */}
           <li className=" font-semibold">
             <NavLink

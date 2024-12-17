@@ -49,6 +49,12 @@ const SingleDonation = () => {
     e.preventDefault();
     const form = e.target;
     const message = form.message.value;
+
+    //(optional) Safeguard for user authentication
+    if (!user || !user.id) {
+      toast.error("User is not logged in or donor ID is missing!");
+      return;
+    }
     const newTransaction = {
       donorId: user.id,
       donationId: id,
@@ -106,9 +112,13 @@ const SingleDonation = () => {
               <p className="text-sm sm:text-lg text-gray-300 mb-2">
                 <strong>Category:</strong> {donation.category}
               </p>
-              <p>Amount: ${donation.amount}</p>
               <p className="text-sm sm:text-lg text-gray-300 mb-2">
-                <strong>Status:</strong>{" "}
+                <strong>Amount:</strong> ${donation.amount}
+              </p>
+              <p className="text-sm sm:text-lg text-gray-300 mb-2">
+                <strong>
+                  Status: <span className="font-normal">Active</span>
+                </strong>{" "}
                 <span
                   className={`${
                     donation.status === "active"
@@ -140,7 +150,7 @@ const SingleDonation = () => {
 
       <div className="mt-20 text-center mb-20">
         <h2 className="text-4xl  font-bold text-gray-800 mb-4">
-          How Your Donations Make an Impact
+          How Your Donations Make an Impact!
         </h2>
         <p className="text-lg text-gray-600">
           Your contributions help us bring smiles to countless faces by funding
@@ -150,17 +160,20 @@ const SingleDonation = () => {
           <img
             src="https://pbs.twimg.com/media/DeS1aMCWsAAgYTR.jpg"
             alt="Impact 1"
+            // className="w-full h-60 object-cover  shadow-lg"
             className="w-full h-60 object-cover  shadow-lg"
           />
           <img
             src="https://www.ottawalife.com/wp-content/uploads/2022/11/gift-of-giving_senior_being-neighbourly_helping_volunteering.jpg"
             alt="Impact 2"
-            className="w-full h-80 object-cover shadow-lg"
+            // className="w-full  h-80 object-cover shadow-lg"
+            className="w-full  h-96 object-cover shadow-lg"
           />
+
           <img
             src="https://img.freepik.com/free-photo/portrait-indian-kids-bazaar_23-2150913328.jpg"
             alt="Impact 3"
-            className="w-full h-60 object-cover  shadow-lg"
+            className="w-full  h-60 object-cover  shadow-lg"
           />
         </div>
       </div>

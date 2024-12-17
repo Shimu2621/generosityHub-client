@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Video = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({ duration: 1000, offset: 50 });
+  }, []);
   return (
     <div className=" mx-auto max-w-[1440px] h-[95vh] justify-center ">
+      {/* Banner Section */}
       <div className=" relative">
         <img
           className="w-full h-[50vh] sm:h-[50vh] lg:h-[70vh] object-cover"
@@ -16,7 +23,7 @@ const Video = () => {
 
         {/* text */}
         <div className="absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-          <h2 className="mt-10 text-lg sm:text-xl  lg:text-5xl  font-semibold">
+          <h2 className="mt-10 text-lg sm:text-xl  lg:text-5xl  font-bold">
             Why Choose Us?
           </h2>
           <p className=" text-white mt-6 text-lg sm:text-xl lg:text-2xl font-normal">
@@ -25,7 +32,7 @@ const Video = () => {
           </p>
         </div>
         {/* Video image */}
-        <div className="absolute  top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full  bg-white flex justify-center items-center p-8 ">
+        <div className="absolute  top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full  bg-white flex justify-center items-center p-8">
           <iframe
             className="w-full max-w-[1100px] h-[40vh]"
             src="https://www.youtube.com/embed/ElG5-nXD0B8?si=oMa3A6t4Lbtb2PqW"

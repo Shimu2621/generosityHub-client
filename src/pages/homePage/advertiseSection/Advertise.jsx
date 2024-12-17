@@ -1,37 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Advertise = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS with animation duration
+  }, []);
+
   return (
     <section className="bg-slate-900 max-w-[1440px] mt-20 pt-10 mx-auto py-12 px-6">
       <div className="container mx-auto">
-        {/* Section Heading */}
-        {/* <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Welcome to GenerosityHub
-          </h2>
-          <h3 className="text-2xl md:text-l font-bold pt-2 text-gray-400">
-            Why Choose GenerosityHub?
-          </h3>
-          <div className="mt-6 text-lg font-medium text-gray-600 leading-relaxed">
-            <span>We provide secure and seamless donation experiences.</span>
-            <br />
-            <span>
-              From real-time we ensure your generosity makes a real impact.{" "}
-            </span>
-          </div>
-        </div> */}
-
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition">
+          <div
+            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition"
+            data-aos="fade-up"
+          >
             <div className="w-28 h-28 flex items-center justify-center rounded-lg mb-4">
-              {/* <i className="fas fa-lock text-2xl"></i> */}
               <img
-                src={
-                  "https://www.fundly.com/content/images/icon_vertical_%20NP.svg"
-                }
-                alt=""
+                src="https://www.fundly.com/content/images/icon_vertical_%20NP.svg"
+                alt="Secure Transactions"
               />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -45,13 +34,15 @@ const Advertise = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition">
+          <div
+            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div className="w-28 h-28 flex items-center justify-center rounded-full mb-4">
               <img
-                src={
-                  "https://www.fundly.com/content/images/icon_vertical_%20kids.svg"
-                }
-                alt=""
+                src="https://www.fundly.com/content/images/icon_vertical_%20kids.svg"
+                alt="Real-Time Updates"
               />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -61,20 +52,21 @@ const Advertise = () => {
               <span>Track your impact with live updates on every project.</span>
               <br />
               <span>
-                You will see exactly how your generosity and simplicity is
-                making a differences.
+                See exactly how your generosity is making a difference.
               </span>
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition">
+          <div
+            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div className="w-28 h-28 flex items-center justify-center rounded-full mb-4">
               <img
-                src={
-                  "https://www.fundly.com/content/images/icon_vertical_%20religious.svg"
-                }
-                alt=""
+                src="https://www.fundly.com/content/images/icon_vertical_%20religious.svg"
+                alt="Complete Transparency"
               />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">

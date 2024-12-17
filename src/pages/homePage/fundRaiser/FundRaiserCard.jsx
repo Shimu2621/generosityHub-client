@@ -1,12 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import AOS from "aos";
+import "aos/dist/aos.css"; // AOS styles
 
 const FundRaiserCard = () => {
   const [fundraisers, setFundraisers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      offset: 100, // Offset from the original trigger point
+      easing: "ease-in-out",
+      once: true,
+    });
+
     const fetchFundraisers = async () => {
       try {
         const response = await axios.get(
@@ -23,16 +33,30 @@ const FundRaiserCard = () => {
     fetchFundraisers();
   }, []);
 
+  // Spinner for Loading State
   if (loading) {
-    return <div className="text-center text-xl mt-10">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="relative w-20 h-20">
+          <div className="absolute  inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
+          <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>
+        </div>
+      </div>
+    );
   }
   return (
-    <div className="px-6 py-20 bg-gray-100 max-w-[1440px] mx-auto">
+    <div className="px-4 sm:px-6 md:px-8 py-10 bg-gray-100 max-w-[1440px] mx-auto">
       <div className="container mx-auto ">
-        <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">
+        <h1
+          className="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-6"
+          data-aos="fade-up"
+        >
           Ongoing Fundraising Campaigns
         </h1>
-        <p className="text-center text-gray-600 text-lg mb-8 px-2">
+        <p
+          className="text-center text-gray-600 text-base sm:text-lg mb-8 px-4 sm:px-6"
+          data-aos="fade-up"
+        >
           {" "}
           Join us in making a difference! With your help, we can create safe
           learning <br /> environments, equip classrooms with necessary
@@ -40,21 +64,33 @@ const FundRaiserCard = () => {
         </p>
 
         {/* Fundraising Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
-          {fundraisers.map((fundraiser) => (
-            <div className="card bg-base-100 w-26 rounded-none mx-auto max-w-[1400px] shadow-xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
+          {fundraisers.map((fundraiser, index) => (
+            <div
+              key={fundraiser?.id}
+              className="card bg-base-100 w-26 rounded-none mx-auto max-w-[1400px] shadow-xl"
+              data-aos={
+                (index + 1) % 4 === 1 || (index + 1) % 4 === 2
+                  ? "fade-right"
+                  : "fade-left"
+              } // Cards 1 & 2 in each row/group:
+              // Animated from right to center ("fade-right").
+
+              // Cards 3 & 4 in each row/group:
+              // Animated from left to center ("fade-left").
+            >
               <figure>
                 <img
-                  className="w-full h-56 object-cover"
+                  className="w-full h-48 sm:h-56 object-cover"
                   src={fundraiser?.thumbnail}
                   alt={fundraiser?.title}
                 />
               </figure>
               <div className="flex flex-grow flex-col px-5 pt-4">
-                <h2 className="text-xl font-bold text-gray-800 mb-2">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
                   {fundraiser?.title}
                 </h2>
-                <p className="text-gray-600 flex-grow mt-2 line-clamp-3">
+                <p className="text-gray-600 flex-grow mt-2 line-clamp-3 text-sm sm:text-base">
                   {fundraiser?.description}
                 </p>
 

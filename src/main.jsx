@@ -20,7 +20,13 @@ import CreateDonation from "./pages/admin/CreateDonation.jsx";
 import CreateFundraiser from "./pages/admin/CreateFundraiser.jsx";
 import AllDonation from "./pages/admin/AllDonation.jsx";
 import UpdateDonation from "./pages/admin/UpdateDonation.jsx";
+import UpdateFundraiser from "./pages/admin/UpdateFundraiser.jsx";
 import AllUsers from "./pages/admin/AllUsers.jsx";
+import AllFundraiser from "./pages/admin/AllFundraiser.jsx";
+import AllTransaction from "./pages/admin/AllTransaction.jsx";
+import UserTransaction from "./pages/homePage/userTransaction/UserTransaction.jsx";
+import ErrorPage from "./pages/errorPage/ErrorPage.jsx";
+import PrivateRoute from "./pages/privateRoute/PrivateRoute.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -35,20 +41,90 @@ createRoot(document.getElementById("root")).render(
           <Route path="/fundraiserPage" element={<FundRaiserpage />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/donations/:id" element={<SingleDonation />} />
-          <Route path="/fundraisers/:id" element={<SingleFundRaiser />} />
+          <Route
+            path="/donations/:id"
+            element={
+              <PrivateRoute
+                element={<SingleDonation />}
+                allowedRole={["user", "admin"]}
+              />
+            }
+          />
+          <Route
+            path="/fundraisers/:id"
+            element={
+              <PrivateRoute
+                element={<SingleFundRaiser />}
+                allowedRole={["user", "admin"]}
+              />
+            }
+          />
+          <Route path="/user-transaction" element={<UserTransaction />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/update-donation/:id" element={<UpdateDonation />} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="/admin/admin-home" element={<AdminHome />} />
-          <Route path="/admin/create-donation" element={<CreateDonation />} />
-          <Route path="/admin/all-user" element={<AllUsers />} />
-          <Route path="/admin/all-donation" element={<AllDonation />} />
+        <Route path="/update-fundraiser/:id" element={<UpdateFundraiser />} />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute element={<AdminLayout />} allowedRole={["admin"]} />
+          }
+        >
+          <Route
+            path="/admin/admin-home"
+            element={
+              <PrivateRoute element={<AdminHome />} allowedRole={["admin"]} />
+            }
+          />
+          <Route
+            path="/admin/create-donation"
+            element={
+              <PrivateRoute
+                element={<CreateDonation />}
+                allowedRole={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/admin/all-user"
+            element={
+              <PrivateRoute element={<AllUsers />} allowedRole={["admin"]} />
+            }
+          />
+          <Route
+            path="/admin/all-donation"
+            element={
+              <PrivateRoute element={<AllDonation />} allowedRole={["admin"]} />
+            }
+          />
+          <Route
+            path="/admin/all-fundraiser"
+            element={
+              <PrivateRoute
+                element={<AllFundraiser />}
+                allowedRole={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/admin/all-transaction"
+            element={
+              <PrivateRoute
+                element={<AllTransaction />}
+                allowedRole={["admin"]}
+              />
+            }
+          />
           <Route
             path="/admin/create-fundraiser"
-            element={<CreateFundraiser />}
+            element={
+              <PrivateRoute
+                element={<CreateFundraiser />}
+                allowedRole={["admin"]}
+              />
+            }
           />
         </Route>
       </Routes>

@@ -1,11 +1,13 @@
 import Lottie from "lottie-react";
-import React from "react";
-import registeranimation from "../../../public/login.json";
+import React, { useState } from "react";
+import registeranimation from "../../../public/login-page.json";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -36,13 +38,17 @@ const Register = () => {
         console.log(error);
       });
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
-    <div className="max-w-[1440px] h-[800px] mx-auto bg-orange-100 px-10 py-14 mt-12">
+    <div className="max-w-[1440px] h-[800px] mx-auto  px-10 py-10 mt-2">
       <div className="grid grid-cols-1 lg:grid-cols-2 text-center gap-10">
         {/* Animation Section */}
         <div className="bg-white flex justify-center items-center">
           <Lottie
-            className="w-[600px] h-[500px]"
+            className="w-[600px] h-[700px]"
             animationData={registeranimation}
             loop={true}
           />
@@ -50,74 +56,90 @@ const Register = () => {
 
         {/* Register Form Section */}
         <div className="p-2 sm:p-10 max-w-[1000px] bg-white">
-          <h2 className="text-2xl font-bold text-center text-gray-700">
+          <h2 className="text-4xl font-bold text-center text-gray-700">
             Create an Account
           </h2>
           <form
             onSubmit={handleSubmit}
-            className="mt-8 max-w-[700px] h-[560px] px-8 pt-6 py-6 shadow-2xl bg-orange-50 space-y-4"
+            className="mt-8 max-w-[700px] h-[600px] px-8 pt-6 py-6 shadow-2xl bg-teal-900 space-y-4"
           >
             {/* Name Input */}
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">Full Name</span>
+                <span className="label-text text-white">Full Name</span>
               </label>
               <input
                 type="text"
                 name="name"
                 placeholder="Enter your full name"
                 required
-                className="input rounded-none input-bordered pb-1 w-full"
+                className="input rounded-none input-bordered pb-1 input-success w-full "
               />
             </div>
 
             {/* UserPhoto Input */}
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">UserPhoto</span>
+                <span className="label-text text-white">UserPhoto</span>
               </label>
               <input
                 type="text"
                 name="photo"
                 placeholder="Enter your full name"
                 required
-                className="input rounded-none input-bordered pb-1 w-full"
+                className="input rounded-none input-bordered input-success pb-1 w-full"
               />
             </div>
 
             {/* Email Input */}
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-white">Email</span>
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="Enter your email"
                 required
-                className="input rounded-none input-bordered pb-1 w-full"
+                className="input rounded-none input-bordered input-success pb-1 w-full"
               />
             </div>
 
             {/* Password Input */}
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-white">Password</span>
               </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                required
-                className="input rounded-none input-bordered pb-1 w-full"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password" // Add name attribute for form access
+                  placeholder="Enter your password"
+                  className="input rounded-none input-bordered input-success pb-1 w-full"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600"
+                >
+                  {showPassword ? (
+                    <EyeIcon className="h-5 w-5" />
+                  ) : (
+                    <EyeSlashIcon className="h-5 w-5" />
+                  )}
+                </button>
+              </div>
+              <h5 className="text-justify text-sm text-white pb-8">
+                Forget your password?
+              </h5>
             </div>
 
             {/* Submit Button */}
             <div className="form-control w-full">
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-orange-300 to-orange-500 text-white font-bold shadow-lg hover:shadow-orange-500/50 transition-shadow"
+                className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold  shadow-lg hover:shadow-green-500/50 transition-shadow"
               >
                 Register
               </button>
@@ -128,7 +150,7 @@ const Register = () => {
               Already have an account?{" "}
               <a
                 href="/login"
-                className="text-orange-600 font-bold hover:underline"
+                className="text-green-600 font-bold hover:underline"
               >
                 Login
               </a>

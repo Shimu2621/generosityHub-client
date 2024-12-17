@@ -1,9 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [filteredUsers, setFilteredUsers] = useState([]);
+  // const [roleFilter, setRoleFilter] = useState("");
   const [loading, setLoading] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -18,7 +23,45 @@ const AllUsers = () => {
       }
     };
     fetchUsers();
-  }, []);
+  }, [refreshKey]);
+
+  // Handle role change
+  const handleRoleChange = async (id, newRole) => {
+    console.log(newRole);
+    console.log(id);
+    try {
+      const response = await axios.put(
+        `http://localhost:4000/api/users/${id}`,
+        { role: newRole } //the payload sent to the server to update the role
+      );
+      console.log("response:", response);
+      // If the user.id matches (user)id, update the role for that user.
+      if (response.data.status === "Success") {
+        setUsers((prevUsers) =>
+          prevUsers.map((user) =>
+            user.id === id ? { ...user, role: newRole } : user
+          )
+        );
+        setRefreshKey((prev) => prev + 1);
+        toast.success("Role Updated Successfully");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to update role");
+    }
+  };
+
+  // Spinner for Loading State
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="relative w-20 h-20">
+          <div className="absolute inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
+          <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="overflow-x-auto px-4 pt-14 w-full ">
@@ -47,7 +90,7 @@ const AllUsers = () => {
         <tbody>
           {users.length > 0 ? (
             users.map((user) => (
-              <tr key={user.id} className="border border-teal-400">
+              <tr key={user._id} className="border border-teal-400">
                 {/* checkbox */}
                 <th className="border border-teal-500">
                   <label>
@@ -79,22 +122,34 @@ const AllUsers = () => {
                 <td className="border border-teal-500 text-teal-400">
                   {user?.role}
                 </td>
-
+                {/* Action */}
                 <td className=" text-teal-400 mt-3  text-center">
-                  {/* <Link to={`/update-donation/${user._id}`}>
-                    <button
-                      // onClick={() => handleEdit(donation._id)}
-                      className="btn btn-xs btn-warning mx-1"
-                    >
-                      Edit
-                    </button>
-                  </Link> */}
-                  <button
-                    onClick={() => handleDelete(user._id)}
-                    className="btn btn-xs btn-error mx-1"
+                  <select
+                    value={user.role === "admin" ? "user" : "admin"}
+                    onChange={(e) => handleRoleChange(user._id, e.target.value)}
+                    className="select select-bordered bg-teal-400 w-full max-w-sm text-black"
                   >
-                    Delete
-                  </button>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                  </select>
+
+                  {/* <div className="flex space-x-4">
+                    {user.role === "user" ? (
+                      <button
+                        onClick={() => handleRoleChange(user.id, "admin")}
+                        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                      >
+                        Promote to Admin
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => handleRoleChange(user.id, "user")}
+                        className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
+                      >
+                        Demote to User
+                      </button>
+                    )}
+                  </div> */}
                 </td>
               </tr>
             ))

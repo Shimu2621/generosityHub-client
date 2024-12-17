@@ -2,7 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router";
-import useAuthProvider from "../../utils/authProvider/authProvider";
+import useAuthProvider from "../../utils/authProvider/AuthProvider";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
+import { FaSearch } from "react-icons/fa";
 
 const DonationPage = () => {
   const [donations, setDonations] = useState([]);
@@ -11,6 +14,14 @@ const DonationPage = () => {
   console.log("This is from donation page:", user);
 
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      offset: 100, // Offset from the original trigger point
+      easing: "ease-in-out",
+      once: true,
+    });
+
     const fetchDonations = async () => {
       try {
         const response = await axios.get("http://localhost:4000/api/donations");
@@ -26,20 +37,21 @@ const DonationPage = () => {
     fetchDonations();
   }, []);
 
-  // if (loading) {
-  //   return <div className="text-center text-xl mt-10">Loading...</div>;
-  // }
+  // Spinner for Loading State
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="relative w-20 h-20">
+          <div className="absolute inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
+          <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>
+        </div>
       </div>
     );
   }
   return (
-    <div className="max-w-[1600px] mx-auto">
+    <div className="max-w-[1600px] mx-auto ">
       {/* Banner Section */}
-      <div className="relative mb-10">
+      <div className="relative mb-10" data-aos="fade-in">
         <img
           src="https://i.ytimg.com/vi/SQexRN_p_xU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC39bqGqsIemyRB_YIbgCjJYbHDag"
           alt="Donation Banner"
@@ -48,14 +60,44 @@ const DonationPage = () => {
         {/* opacity for shade */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-40 text-white">
           {/* text */}
-          <h2 className="text-4xl font-bold mb-4">Make a Difference Today</h2>
-          <p className="text-lg">Your generosity can change lives.</p>
+          <h2 className="text-5xl font-bold mb-4" data-aos="zoom-in">
+            Make a Difference Today
+          </h2>
+          <p className="text-lg" data-aos="zoom-in">
+            Your generosity can change lives.
+          </p>
+        </div>
+
+        {/* Add the search input and filter bar */}
+        <div className="absolute top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full bg-black flex justify-center items-center p-14  shadow-lg">
+          <div className="flex w-full space-x-4" data-aos="zoom-in">
+            {/* Search input */}
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search for a donation category..."
+                className="w-full py-4 px-4 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+              <span className="absolute inset-y-0 right-0 flex items-center p-6 border border-spacing-1 text-gray-600 cursor-pointer">
+                {/* Search Icon */}
+                <FaSearch />
+              </span>
+            </div>
+
+            {/* Filter Bar */}
+            <div className="flex items-center ">
+              <select className="p-4  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <option value="">Filter by Amount</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
-
       {/* Introduction Section */}
-      <div className="max-w-[1440px] mx-auto">
-        <div className="text-center mb-12">
+      <div className="max-w-[1440px] mx-auto pt-40">
+        <div className="text-center mb-12" data-aos="zoom-in">
           <h2 className="text-4xl font-bold text-gray-800 pt-4">
             Explore Our Featured Donation Campaigns
           </h2>
@@ -67,10 +109,19 @@ const DonationPage = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {donations.map((donation) => (
+          {donations.map((donation, index) => (
             <div
               key={donation.id}
               className="bg-white shadow-lg overflow-hidden flex flex-col transition-transform transform hover:scale-105"
+              data-aos={
+                (index + 1) % 4 === 1 || (index + 1) % 4 === 2
+                  ? "fade-right"
+                  : "fade-left"
+              } // Cards 1 & 2 in each row/group:
+              // Animated from right to center ("fade-right").
+
+              // Cards 3 & 4 in each row/group:
+              // Animated from left to center ("fade-left").
             >
               <figure>
                 <img

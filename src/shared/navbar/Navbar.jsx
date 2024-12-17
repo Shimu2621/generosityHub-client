@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import navlogo from "../../../public/images/navbarlogo/navlogo1.png";
 import useAuthProvider from "../../utils/authProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { user, logout } = useAuthProvider(); // Get user and logout function from authProvider.js
   console.log("user:", user);
 
@@ -156,6 +157,11 @@ const Navbar = () => {
             <li>
               <NavLink to="/profile">Profile</NavLink>
             </li>
+            {user.role === "user" && (
+              <li>
+                <Link to="/user-transaction">Transaction</Link>
+              </li>
+            )}
             {user.role === "admin" && ( // Check if user is an admin
               <li>
                 <NavLink to="/admin/admin-home">Admin Panel</NavLink>
@@ -168,7 +174,7 @@ const Navbar = () => {
         </div>
       ) : (
         <button className="btn btn-md custom-btn-size bg-gradient-to-r from-green-500 to-green-900 text-white font-bold rounded-lg shadow-lg hover:shadow-green-500/50 transition-shadow">
-          <Link to="/register">
+          <Link to="/login">
             <p>Join Us</p>
           </Link>
           <svg
