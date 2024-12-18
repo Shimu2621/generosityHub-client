@@ -81,7 +81,7 @@ const SingleDonation = () => {
 
   return (
     <div className="max-w-[1600px] mx-auto">
-      <div className="relative mb-10">
+      <div className="relative mb-10 rounded-sm">
         {/* Background Image */}
         <img
           src="https://static.vecteezy.com/system/resources/thumbnails/045/931/070/small/small-children-gazes-solemnly-at-the-camera-eyes-reflecting-innocence-and-vulnerability-free-photo.jpg"
@@ -97,7 +97,7 @@ const SingleDonation = () => {
               <img
                 src={donation.thumbnail}
                 alt={donation.title}
-                className="h-[60vh] sm:h-[50vh] w-full object-cover py-8 shadow-lg "
+                className="h-[60vh] sm:h-[50vh] w-full rounded-sm object-cover py-8 shadow-lg "
               />
             </div>
 
@@ -138,7 +138,7 @@ const SingleDonation = () => {
               <div className="mt-6">
                 <button
                   onClick={() => handleDonateNow(donation.amount)}
-                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-green-500 to-green-800 text-white font-bold rounded-md shadow-lg hover:shadow-green-500/50 transition-shadow"
+                  className="w-full sm:w-auto px-6 py-3 rounded-sm bg-gradient-to-r from-green-500 to-green-800 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow"
                 >
                   Donate Now
                 </button>
@@ -161,19 +161,19 @@ const SingleDonation = () => {
             src="https://pbs.twimg.com/media/DeS1aMCWsAAgYTR.jpg"
             alt="Impact 1"
             // className="w-full h-60 object-cover  shadow-lg"
-            className="w-full h-60 object-cover  shadow-lg"
+            className="w-full h-60 object-cover rounded-sm  shadow-lg"
           />
           <img
             src="https://www.ottawalife.com/wp-content/uploads/2022/11/gift-of-giving_senior_being-neighbourly_helping_volunteering.jpg"
             alt="Impact 2"
             // className="w-full  h-80 object-cover shadow-lg"
-            className="w-full  h-96 object-cover shadow-lg"
+            className="w-full  h-96 object-cover rounded-sm shadow-lg"
           />
 
           <img
             src="https://img.freepik.com/free-photo/portrait-indian-kids-bazaar_23-2150913328.jpg"
             alt="Impact 3"
-            className="w-full  h-60 object-cover  shadow-lg"
+            className="w-full  h-60 object-cover rounded-sm shadow-lg"
           />
         </div>
       </div>
@@ -192,13 +192,13 @@ const SingleDonation = () => {
                   <span className="label-text">Your message here</span>
                 </label>
                 <textarea
-                  className="textarea textarea-success"
+                  className="textarea textarea-success rounded-sm"
                   placeholder="Text Here"
                   name="message"
                 ></textarea>
               </div>
               <button
-                className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-green-800 text-white font-bold rounded-md shadow-lg hover:shadow-green-500/50 transition-shadow"
+                className="w-full rounded-sm px-6 py-3 bg-gradient-to-r from-green-500 to-green-800 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow"
                 type="submit"
               >
                 Donate

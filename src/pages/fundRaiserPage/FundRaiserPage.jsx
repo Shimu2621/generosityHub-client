@@ -71,24 +71,24 @@ const FundRaiserpage = () => {
         </div>
 
         {/* Add the search input and filter bar */}
-        <div className="absolute top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full bg-black flex justify-center items-center p-14  shadow-lg">
+        <div className="absolute top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full bg-black flex justify-center items-center p-14 rounded-sm  shadow-lg">
           <div className="flex w-full space-x-4" data-aos="fade-up">
             {/* Search input */}
-            <div className="relative w-full">
+            <div className="relative w-full rounded-md">
               <input
                 type="text"
                 placeholder="Search for a donation category..."
-                className="w-full py-4 px-4 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full py-4 px-4 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-green-500 rounded-sm"
               />
-              <span className="absolute inset-y-0 right-0 flex items-center p-6 border border-spacing-1 text-gray-600 cursor-pointer">
+              <span className="absolute inset-y-0 right-0 flex items-center p-6 border border-spacing-1 text-gray-600 rounded-sm cursor-pointer">
                 {/* Search Icon */}
                 <FaSearch />
               </span>
             </div>
 
             {/* Filter Bar */}
-            <div className="flex items-center">
-              <select className="p-4 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <div className="flex items-center rounded-sm">
+              <select className="p-4 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-green-500">
                 <option value="">Filter by Amount</option>
                 <option value="low">Low to High</option>
                 <option value="high">High to Low</option>
@@ -120,7 +120,7 @@ const FundRaiserpage = () => {
         {fundraisers.map((fundraiser, index) => (
           <div
             key={fundraiser.id}
-            className="card bg-base-100 w-26 rounded-none mx-auto max-w-[1400px] shadow-xl"
+            className="card bg-base-100 w-26 rounded-sm mx-auto max-w-[1400px] shadow-xl"
             data-aos={
               (index + 1) % 4 === 1 || (index + 1) % 4 === 2
                 ? "fade-right"
@@ -142,7 +142,7 @@ const FundRaiserpage = () => {
               <h2 className="text-xl font-bold text-gray-800 mb-2">
                 {fundraiser?.title}
               </h2>
-              <p className="text-gray-600 flex-grow mt-2 line-clamp-3">
+              <p className="text-gray-600 flex-grow mt-2 line-clamp-2">
                 {fundraiser?.description}
               </p>
 
@@ -201,7 +201,7 @@ const FundRaiserpage = () => {
                 {/* Button */}
                 <div className="mt-2">
                   <Link to={`/fundraisers/${fundraiser._id}`}>
-                    <button className="mt-8 px-3 py-3 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
+                    <button className="mt-8 px-3 py-3 rounded-sm transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
                       View Details
                     </button>
                   </Link>

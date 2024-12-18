@@ -40,7 +40,7 @@ const AboutUs = () => {
         <div className="w-full md:w-1/2 h-[50vh]" data-aos="fade-right">
           <div>
             <img
-              className="relative w-[90%] h-[60vh] object-cover "
+              className="relative w-[90%] h-[60vh] object-cover"
               src="https://t4.ftcdn.net/jpg/06/64/06/69/240_F_664066965_PhSUsDO2WMn5duCp389P3yLRQIXc6MQQ.jpg"
               alt=""
             />
@@ -49,7 +49,7 @@ const AboutUs = () => {
             <img
               src="https://static.vecteezy.com/system/resources/thumbnails/036/017/382/small/ai-generated-a-group-of-young-children-sitting-together-photo.jpg"
               alt="Children"
-              className="absolute top-1/2 left-1/3 bg-white p-4 w-[65%] h-[86%] object-cover "
+              className="absolute top-1/2 left-1/3  bg-white p-4 w-[65%] h-[86%] object-cover "
             />
           </div>
         </div>
@@ -156,11 +156,8 @@ const AboutUs = () => {
       </div>
 
       {/* Our Gallery */}
-      <div
-        className=" bg-white pt-20 py-10 max-w-[1440px] h-[110vh] mx-auto"
-        data-aos="zoom-in"
-      >
-        <div className="text-center">
+      <div className=" bg-white pt-32 py-10 max-w-[1450px] h-[110vh] mx-auto">
+        <div className="text-center" data-aos="fade-up">
           <h1 className="text-green-700 text-xl font-semibold italic">
             Our Gallery
           </h1>
@@ -173,61 +170,68 @@ const AboutUs = () => {
             tells a unique story about through acts of kindness.
           </p>
         </div>
-        <div className="gallery-container mx-auto grid max-w-[1470px] h-[100vh] grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4  overflow-y-auto">
+        <div className="gallery-container mx-auto grid max-w-[1470px] h-[100vh] grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 overflow-y-auto">
           <div>
             <img
               src="https://regenbrampton.com/wp-content/uploads/2022/12/How-to-Help-a-Homeless-Family-Member-Hero-1024x672.jpeg"
               alt=""
-              className="w-full h-[30vh] object-cover "
+              className="w-full h-[30vh] object-cover"
+              data-aos="fade-right"
             />
             <img
               src="https://img.freepik.com/free-photo/women-girl-power-feminism-equal-opportunity-concept_53876-121188.jpg"
               alt=""
               className="w-full h-[52vh] py-4 object-cover rounded-lg"
+              data-aos="fade-left"
             />
           </div>
           <div>
             <img
               src="https://www.shutterstock.com/image-photo/happy-grandmother-her-granddaughter-working-600nw-583503205.jpg"
               alt=""
-              className="w-full h-[50vh] pb-4 object-cover "
+              className="w-full h-[50vh] pb-4 object-cover"
+              data-aos="zoom-in"
             />
             <img
               src="https://www.shutterstock.com/image-photo/young-volunteers-children-box-donations-600nw-723675208.jpg"
               alt=""
-              className="w-full h-[30vh]  object-cover"
+              className="w-full h-[30vh] object-cover"
+              data-aos="zoom-out"
             />
           </div>
           <div>
             <img
               src="https://pupford.b-cdn.net/assets%2Fblog%2Fthelife-savingeffortsofdogrescueorganizations%2F1711995835255-two%20dogs%20and%20a%20woman%20smiling%20outside.jpg?alt=media&token=3d6438c8-87cc-4690-8b84-14c25f5bed79"
               alt=""
-              className="w-full h-[41vh] pb-4 object-cover "
+              className="w-full h-[41vh] pb-4 object-cover"
+              data-aos="fade-down-right"
             />
             <img
               src="https://images.squarespace-cdn.com/content/v1/62afe4476590b42f61595a76/b189b9d3-e679-4afb-8e6c-a499dc8d0550/decorative-image-friends-eating-cupcakes.jpg"
               alt=""
-              className="w-full h-[39vh]  object-cover "
+              className="w-full h-[39vh] object-cover"
+              data-aos="fade-down-left"
             />
           </div>
           <div>
             <img
               src="https://taralazar.com/wp-content/uploads/2016/09/girl-with-rif-book.png?w=584&h=324"
               alt=""
-              className="w-full h-[45vh] pb-4 object-cover "
+              className="w-full h-[45vh] pb-4 object-cover"
+              data-aos="fade-down-right"
             />
-
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTha8JhCZ_llwNq-yzZWvLifLWRI_PSmLB5jhoLdxSwA1hvkfpMLkIwPNeD3qPw324H3j0&usqp=CAU"
               alt=""
-              className="w-full h-[35vh] object-cover "
+              className="w-full h-[35vh] object-cover"
+              data-aos="fade-down-left"
             />
           </div>
         </div>
       </div>
 
       {/* Our Volunteer */}
-      <div className="max-w-[1440px] mx-auto text-center">
+      <div className="max-w-[1440px] pt-28 mx-auto text-center">
         <div data-aos="fade-left">
           <p className="italic text-xl pt-10 mb-2 text-green-700 font-semibold">
             Our Strength

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const AllFundraiser = () => {
   const [fundraisers, setFundraisers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchFundRaiser = async () => {
@@ -13,10 +13,10 @@ const AllFundraiser = () => {
           "http://localhost:4000/api/fundraisers"
         );
         setFundraisers(response.data.data);
-        setLoading(true);
+        setLoading(false);
       } catch (error) {
         console.log("fetching error:", error);
-        setLoading(true);
+        setLoading(false);
       }
     };
     fetchFundRaiser();
@@ -38,7 +38,7 @@ const AllFundraiser = () => {
   // Spinner for Loading State
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="flex items-center justify-center w-[90vw] min-h-screen bg-gray-100">
         <div className="relative w-20 h-20">
           <div className="absolute inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
           <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>

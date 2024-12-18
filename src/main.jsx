@@ -27,6 +27,7 @@ import AllTransaction from "./pages/admin/AllTransaction.jsx";
 import UserTransaction from "./pages/homePage/userTransaction/UserTransaction.jsx";
 import ErrorPage from "./pages/errorPage/ErrorPage.jsx";
 import PrivateRoute from "./pages/privateRoute/PrivateRoute.jsx";
+import Profile from "./pages/auth/Profile.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -64,6 +65,7 @@ createRoot(document.getElementById("root")).render(
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/update-donation/:id" element={<UpdateDonation />} />
         <Route path="/update-fundraiser/:id" element={<UpdateFundraiser />} />
         <Route

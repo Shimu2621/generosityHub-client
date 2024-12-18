@@ -7,7 +7,7 @@ const AllUsers = () => {
   // const [searchTerm, setSearchTerm] = useState("");
   // const [filteredUsers, setFilteredUsers] = useState([]);
   // const [roleFilter, setRoleFilter] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
@@ -16,10 +16,10 @@ const AllUsers = () => {
         const response = await axios.get("http://localhost:4000/api/users");
         console.log(response);
         setUsers(response.data.data);
-        setLoading(true);
+        setLoading(false);
       } catch (error) {
         console.log("Error fetching users:", error);
-        setLoading(true);
+        setLoading(false);
       }
     };
     fetchUsers();
@@ -54,8 +54,8 @@ const AllUsers = () => {
   // Spinner for Loading State
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <div className="relative w-20 h-20">
+      <div className="flex items-center justify-center w-[90vw] min-h-screen bg-gray-100">
+        <div className="relative w-20 h-20 ">
           <div className="absolute inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
           <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>
         </div>

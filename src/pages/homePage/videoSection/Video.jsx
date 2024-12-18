@@ -32,9 +32,9 @@ const Video = () => {
           </p>
         </div>
         {/* Video image */}
-        <div className="absolute  top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full  bg-white flex justify-center items-center p-8">
+        <div className="absolute rounded-sm  top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full  bg-white flex justify-center items-center p-8">
           <iframe
-            className="w-full max-w-[1100px] h-[40vh]"
+            className="w-full max-w-[1100px] h-[40vh] rounded-sm"
             src="https://www.youtube.com/embed/ElG5-nXD0B8?si=oMa3A6t4Lbtb2PqW"
             title="YouTube video player"
             style={{ border: "none" }}

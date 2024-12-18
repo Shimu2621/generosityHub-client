@@ -61,7 +61,7 @@ const ContactUs = () => {
 
         {/* Contact page section */}
         <div className="hero">
-          <div className="hero-content flex flex-col md:flex-row items-center gap-10 md:gap-20">
+          <div className="hero-content flex flex-col md:flex-row items-center gap-10 md:gap-20 rounded-sm">
             {/* Animation Section */}
             <div
               data-aos="fade-right"
@@ -79,7 +79,7 @@ const ContactUs = () => {
             <div
               data-aos="fade-left"
               data-aos-delay="500"
-              className="card bg-teal-900 w-full md:w-[50%] max-w-sm h-auto rounded-none  "
+              className="card bg-teal-900 w-full md:w-[50%] max-w-sm h-auto rounded-sm  "
             >
               <form className="card-body">
                 <div className="form-control">
@@ -89,7 +89,7 @@ const ContactUs = () => {
                   <input
                     type="text"
                     placeholder="Name"
-                    className="input input-bordered input-success rounded-none"
+                    className="input input-bordered input-success rounded-sm"
                     required
                   />
                 </div>
@@ -100,7 +100,7 @@ const ContactUs = () => {
                   <input
                     type="email"
                     placeholder="Email"
-                    className="input input-bordered input-success rounded-none"
+                    className="input input-bordered input-success rounded-sm"
                     required
                   />
                 </div>
@@ -110,12 +110,12 @@ const ContactUs = () => {
                   </label>
                   <textarea
                     placeholder="Message"
-                    className="textarea textarea-bordered input-success rounded-none w-full"
+                    className="textarea textarea-bordered input-success rounded-sm w-full"
                     required
                   ></textarea>
                 </div>
                 <div className="form-control mt-6 pb-10">
-                  <button className="w-full px-6 py-3 rounded-none bg-gradient-to-r from-green-500 to-green-900 text-white font-bold  shadow-lg hover:shadow-green-500/50 transition-shadow">
+                  <button className="w-full px-6 py-3 rounded-sm bg-gradient-to-r from-green-500 to-green-900 text-white font-bold  shadow-lg hover:shadow-green-500/50 transition-shadow">
                     Send Message
                   </button>
                 </div>

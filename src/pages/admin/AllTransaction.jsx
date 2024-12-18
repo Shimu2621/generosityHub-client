@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaSpinner } from "react-icons/fa";
+// import { FaSpinner } from "react-icons/fa";
 
 const AllTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -27,7 +27,7 @@ const AllTransactions = () => {
   // Spinner for Loading State
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="flex items-center justify-center w-[90vw] min-h-screen bg-gray-100">
         <div className="relative w-20 h-20">
           <div className="absolute inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
           <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>
@@ -81,9 +81,7 @@ const AllTransactions = () => {
                     "N/A"}
                 </td>
                 <td className="border border-teal-500 text-teal-400">
-                  {transaction.donationId?.message ||
-                    transaction.fundRaiserId?.message ||
-                    "N/A"}
+                  {transaction.message || "N/A"}
                 </td>
                 <td className="border border-teal-500 text-teal-400">
                   {transaction.amount || "N/A"}

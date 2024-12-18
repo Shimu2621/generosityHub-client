@@ -162,23 +162,25 @@ const SingleFundraiser = () => {
           How Your Contributions Help
         </h2>
         <p className="text-lg text-gray-600">
-          Together, we can make a significant difference in many lives.
+          Together, we can make a significant difference in many lives. We
+          believe that together, we can <br /> overcome challenges and make
+          lasting changes!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
           <img
             src="https://pbs.twimg.com/media/DeS1aMCWsAAgYTR.jpg"
             alt="Impact 1"
-            className="w-full h-60 object-cover shadow-lg"
+            className="w-full h-80 object-cover rounded-sm shadow-lg"
           />
           <img
             src="https://www.ottawalife.com/wp-content/uploads/2022/11/gift-of-giving_senior_being-neighbourly_helping_volunteering.jpg"
             alt="Impact 2"
-            className="w-full h-80 object-cover shadow-lg"
+            className="w-full h-80 object-cover rounded-sm shadow-lg"
           />
           <img
             src="https://img.freepik.com/free-photo/portrait-indian-kids-bazaar_23-2150913328.jpg"
             alt="Impact 3"
-            className="w-full h-60 object-cover shadow-lg"
+            className="w-full h-80 object-cover rounded-sm shadow-lg"
           />
         </div>
       </div>

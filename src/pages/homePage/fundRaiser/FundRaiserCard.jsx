@@ -68,7 +68,7 @@ const FundRaiserCard = () => {
           {fundraisers.map((fundraiser, index) => (
             <div
               key={fundraiser?.id}
-              className="card bg-base-100 w-26 rounded-none mx-auto max-w-[1400px] shadow-xl"
+              className="card bg-base-100 w-26 rounded-sm mx-auto max-w-[1400px] shadow-xl"
               data-aos={
                 (index + 1) % 4 === 1 || (index + 1) % 4 === 2
                   ? "fade-right"
@@ -90,7 +90,7 @@ const FundRaiserCard = () => {
                 <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
                   {fundraiser?.title}
                 </h2>
-                <p className="text-gray-600 flex-grow mt-2 line-clamp-3 text-sm sm:text-base">
+                <p className="text-gray-600 flex-grow mt-2 line-clamp-2 text-sm sm:text-base">
                   {fundraiser?.description}
                 </p>
 
@@ -153,7 +153,7 @@ const FundRaiserCard = () => {
                       to={`/fundraisers/${fundraiser._id}`}
                       className="inline-block"
                     >
-                      <button className="mt-8 px-3 py-3 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
+                      <button className="mt-8 px-3 py-3 rounded-sm transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
                         View Details
                       </button>
                     </Link>
@@ -167,7 +167,7 @@ const FundRaiserCard = () => {
         {/* View All Fundraisers Button */}
         <div className="text-center mt-10">
           <Link to="/fundraiserPage">
-            <button className="mt-8 px-4 py-3 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
+            <button className="mt-8 px-4 py-3 rounded-sm transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
               View All Fundraiser
             </button>
           </Link>

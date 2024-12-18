@@ -105,53 +105,6 @@ const ErrorPage = () => {
           />
         </svg>
       </button>
-
-      <button class="px-4 py-2 bg-red-500 text-white rounded transform transition duration-300 hover:scale-110">
-        Animated Button
-      </button>
-      <button class="px-4 py-2 bg-pink-500 text-white rounded-full">
-        Pill Button
-      </button>
-
-      <button class="px-4 py-2 bg-gray-500 text-white rounded flex items-center justify-center">
-        <svg
-          class="animate-spin h-5 w-5 mr-2"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="4"
-          ></circle>
-          <path
-            d="M12 2a10 10 0 110 20 10 10 0 010-20z"
-            fill="currentColor"
-          ></path>
-        </svg>
-        Loading
-      </button>
-      <div class="inline-flex">
-        <button class="px-4 py-2 bg-gray-500 text-white rounded-l">Left</button>
-        <button class="px-4 py-2 bg-gray-700 text-white">Middle</button>
-        <button class="px-4 py-2 bg-gray-500 text-white rounded-r">
-          Right
-        </button>
-      </div>
-
-      <button class="px-4 py-2 bg-purple-600 text-white rounded relative after:absolute after:inset-0 after:bg-purple-700 after:-z-10 after:rounded after:translate-y-1 hover:after:translate-y-0 transition">
-        Elevated Button
-      </button>
-      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 hover:shadow-lg">
-        Hover Effect
-      </button>
-      <button class="px-4 py-2 text-blue-500 hover:underline">
-        Text Button
-      </button>
     </div>
   );
 };

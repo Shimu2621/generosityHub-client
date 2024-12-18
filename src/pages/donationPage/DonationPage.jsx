@@ -69,16 +69,16 @@ const DonationPage = () => {
         </div>
 
         {/* Add the search input and filter bar */}
-        <div className="absolute top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full bg-black flex justify-center items-center p-14  shadow-lg">
+        <div className="absolute top-4/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[1120px] w-full bg-black flex justify-center items-center p-14 rounded-sm  shadow-lg">
           <div className="flex w-full space-x-4" data-aos="zoom-in">
             {/* Search input */}
-            <div className="relative w-full">
+            <div className="relative w-full rounded-sm">
               <input
                 type="text"
                 placeholder="Search for a donation category..."
-                className="w-full py-4 px-4 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full py-4 px-4 rounded-sm border border-gray-300  focus:outline-none focus:ring-2 focus:ring-green-500"
               />
-              <span className="absolute inset-y-0 right-0 flex items-center p-6 border border-spacing-1 text-gray-600 cursor-pointer">
+              <span className="absolute inset-y-0 right-0 flex items-center p-6 border border-spacing-1 text-gray-600 rounded-sm cursor-pointer">
                 {/* Search Icon */}
                 <FaSearch />
               </span>
@@ -86,7 +86,7 @@ const DonationPage = () => {
 
             {/* Filter Bar */}
             <div className="flex items-center ">
-              <select className="p-4  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+              <select className="p-4 rounded-sm  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
                 <option value="">Filter by Amount</option>
                 <option value="low">Low to High</option>
                 <option value="high">High to Low</option>
@@ -112,7 +112,7 @@ const DonationPage = () => {
           {donations.map((donation, index) => (
             <div
               key={donation.id}
-              className="bg-white shadow-lg overflow-hidden flex flex-col transition-transform transform hover:scale-105"
+              className="bg-white shadow-lg overflow-hidden flex flex-col transition-transform transform rounded-sm hover:scale-105"
               data-aos={
                 (index + 1) % 4 === 1 || (index + 1) % 4 === 2
                   ? "fade-right"
@@ -159,7 +159,7 @@ const DonationPage = () => {
                     to={`/donations/${donation._id}`}
                     className="inline-block"
                   >
-                    <button className="mt-8 px-4 py-3 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
+                    <button className="mt-8 px-4 py-3 rounded-sm transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
                       View Details
                     </button>
                   </Link>

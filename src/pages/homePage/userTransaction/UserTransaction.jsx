@@ -1,11 +1,31 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuthProvider from "../../../utils/authProvider/AuthProvider";
+import { useParams } from "react-router";
 
 const UserTransaction = () => {
   const { user, loading } = useAuthProvider();
   console.log("User", user);
+  const { id } = useParams();
   const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    if (!user || loading) return; // Ensure the effect only runs when user data is ready
+    const fetchTransactions = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:4000/api/allTransaction/${user.id}`
+        );
+        setTransactions(response.data.data);
+      } catch (error) {
+        console.log("Error fetching transaction data", error);
+      }
+    };
+
+    fetchTransactions();
+  }, [id, user, loading]);
+
+  console.log(transactions);
 
   // Spinner for Loading State
   if (loading) {
@@ -19,29 +39,10 @@ const UserTransaction = () => {
     );
   }
 
-  useEffect(() => {
-    const fetchTransactions = async () => {
-      if (user && user.id) {
-        try {
-          const response = await axios.get(
-            `http://localhost:4000/api/allTransaction/${user.id}`
-          );
-          setTransactions(response.data.data);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    };
-
-    fetchTransactions();
-  }, [user]);
-
-  console.log(transactions);
-
   return (
     <div className="overflow-x-auto w-full px-4 pt-4 ">
-      {/* <h1 className="text-4xl items-center text-center text-black font-bold mb-8">
-        Your Transactions
+      <h1 className="text-4xl items-center text-center text-black font-bold mb-8">
+        My Transactions
       </h1>
       <div className="overflow-x-auto">
         <table className="table mb-40 border border-green-800 shadow-2xl ">
@@ -66,8 +67,7 @@ const UserTransaction = () => {
                   ${transaction?.amount}
                 </td>
                 <td className="border border-black text-black">
-                  {transaction.donationId?.category ||
-                    transaction.fundraiserId?.category}
+                  {transaction?.category}
                 </td>
                 <td className="border border-black text-black">
                   {transaction?.message}
@@ -79,7 +79,7 @@ const UserTransaction = () => {
             ))}
           </tbody>
         </table>
-      </div> */}
+      </div>
     </div>
   );
 };

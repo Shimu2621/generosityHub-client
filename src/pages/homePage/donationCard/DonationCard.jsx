@@ -39,8 +39,8 @@ const DonationCard = () => {
     return (
       <div className="flex items-center justify-center h-screen bg-gray-100">
         <div className="relative w-20 h-20">
-          <div className="absolute  inset-0 animate-spin rounded-full border-4 border-t-green-500 border-b-transparent border-l-transparent"></div>
-          <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-500 border-r-transparent"></div>
+          <div className="absolute  inset-0 animate-spin rounded-full border-4 border-t-green-700 border-b-transparent border-l-transparent"></div>
+          <div className="absolute inset-2 animate-spin-slower rounded-full border-4 border-t-transparent border-b-green-700 border-r-transparent"></div>
         </div>
       </div>
     );
@@ -70,7 +70,7 @@ const DonationCard = () => {
         {donations.map((donation, index) => (
           <div
             key={donation.id}
-            className="bg-white shadow-lg overflow-hidden flex flex-col transition-transform transform hover:scale-105"
+            className="bg-white shadow-lg rounded-sm overflow-hidden flex flex-col transition-transform transform hover:scale-105"
             data-aos={
               (index + 1) % 4 === 1 || (index + 1) % 4 === 2
                 ? "fade-right"
@@ -112,7 +112,7 @@ const DonationCard = () => {
                   to={`/donations/${donation._id}`}
                   className="inline-block"
                 >
-                  <button className="mt-8 px-4 py-3 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
+                  <button className="mt-8 px-4 py-3 rounded-sm transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow">
                     View Details
                   </button>
                 </Link>
@@ -124,7 +124,7 @@ const DonationCard = () => {
 
       <div className="mt-20 text-center" data-aos="fade-up">
         <Link to={"/donationPage"}>
-          <button className="px-6 py-3 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow ">
+          <button className="px-6 py-3 rounded-sm transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-green-900 text-white font-bold shadow-lg hover:shadow-green-500/50 transition-shadow ">
             Show All
           </button>
         </Link>

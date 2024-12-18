@@ -149,22 +149,22 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 rounded-box z-[2]  underline-offset-auto w-40 p-2 shadow"
+            className="dropdown-content menu bg-base-100 rounded-box z-[2]  underline-offset-auto w-40 p-2 shadow "
           >
             <li>
               <a>{user.userName}</a>
             </li>
             <li>
-              <NavLink to="/profile">Profile</NavLink>
+              <Link to="/profile">My Profile</Link>
             </li>
             {user.role === "user" && (
-              <li>
-                <Link to="/user-transaction">Transaction</Link>
+              <li className="text-sm">
+                <Link to="/user-transaction">My Transaction</Link>
               </li>
             )}
             {user.role === "admin" && ( // Check if user is an admin
               <li>
-                <NavLink to="/admin/admin-home">Admin Panel</NavLink>
+                <Link to="/admin/admin-home">Admin Panel</Link>
               </li>
             )}
             <li>

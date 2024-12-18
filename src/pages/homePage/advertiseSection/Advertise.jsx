@@ -8,13 +8,13 @@ const Advertise = () => {
   }, []);
 
   return (
-    <section className="bg-slate-900 max-w-[1440px] mt-20 pt-10 mx-auto py-12 px-6">
-      <div className="container mx-auto">
+    <section className="bg-slate-900 max-w-[1440px] mt-20 pt-10 mx-auto py-12 px-6 rounded-sm">
+      <div className="container mx-auto rounded-sm">
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <div
-            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition"
+            className="flex flex-col items-center text-center p-6 rounded-sm bg-white shadow-md hover:shadow-lg transition"
             data-aos="fade-up"
           >
             <div className="w-28 h-28 flex items-center justify-center rounded-lg mb-4">
@@ -35,7 +35,7 @@ const Advertise = () => {
 
           {/* Card 2 */}
           <div
-            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition"
+            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition rounded-sm"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -59,7 +59,7 @@ const Advertise = () => {
 
           {/* Card 3 */}
           <div
-            className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition"
+            className="flex flex-col items-center text-center p-6 rounded-sm bg-white shadow-md hover:shadow-lg transition"
             data-aos="fade-up"
             data-aos-delay="400"
           >
